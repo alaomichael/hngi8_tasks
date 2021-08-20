@@ -6,7 +6,9 @@ const messageRouter = require('./routes/messages');
 // const methodOverride = require('method-override');
 const app = express();
 
-mongoose.connect('mongodb://localhost/resume',{ useNewUrlParser: true,
+const MONGODB_URI = process.env.MONGODB_URI ||  'mongodb://localhost/resume'
+
+mongoose.connect(MONGODB_URI,{ useNewUrlParser: true,
 useUnifiedTopology: true, useCreateIndex: true })
 
 
